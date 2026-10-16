@@ -49,22 +49,25 @@ Expect a sharpened question, verdict and confidence, assessment across the crite
 
 ### Example
 
-The following is a fictional teaching example, unrelated to the author's research programme.
+The following is a hypothetical teaching example in wave energy, not a description of the author's research plans.
 
 ```text
 Use the research-question-assessment skill in quick-screen mode.
 
-Question: Does spacing practice sessions across several days improve
-retention of unfamiliar vocabulary compared with one session of equal
-total practice time?
+Question: How much does neglecting wave directional spreading change
+the estimated annual energy yield of a generic wave energy converter
+at a hypothetical coastal site?
 
-Assume a hypothetical classroom study with a small volunteer sample,
-random assignment, and a delayed recall test. The proposed contribution
-is evidence to inform a teaching schedule. Resources are limited to one
-classroom and a short follow-up period.
+Assume access to a public directional wave dataset and a published
+benchmark converter model. Compare predictions using the directional
+wave distribution with predictions that represent each sea state by
+a single direction, keeping the other modelling assumptions consistent.
+The proposed contribution is guidance on when this simplification is
+adequate for preliminary energy-yield estimates. Resources are limited
+to a small numerical study using existing data.
 
 Assess whether the question adds anything beyond established findings.
-Challenge the comparison, measurement, and scope of inference. Identify
+Challenge the baseline, validation, and scope of inference. Identify
 the closest prior work that would need checking, propose the cheapest
 informative pilot if warranted, and specify when to expand, pivot, or stop.
 Do not assume the question is novel or worth pursuing.
