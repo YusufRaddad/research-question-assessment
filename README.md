@@ -49,31 +49,33 @@ Expect a sharpened question, verdict and confidence, assessment across the crite
 
 ### Example
 
-The following is a hypothetical teaching example in wave energy, not a description of the author's research plans.
+This example uses completed, published work on oscillating water column (OWC) geometry as a retrospective teaching case:
+
+Almalki, Y.R. and Karmpadakis, I. (2026). [Effects of OWC geometry on total energy efficiency and turbulent dissipation](https://doi.org/10.1016/j.apor.2026.105026). *Applied Ocean Research*, **170**, 105026.
 
 ```text
-Use the research-question-assessment skill in quick-screen mode.
+Use the research-question-assessment skill in evidence-backed assessment
+mode for a retrospective teaching case based on this published paper:
+https://doi.org/10.1016/j.apor.2026.105026
 
-Question: How much does neglecting wave directional spreading change
-the estimated annual energy yield of a generic wave energy converter
-at a hypothetical coastal site?
+Question: How do front and back wall geometries affect the energy
+efficiency of an oscillating water column embedded in a fixed caisson
+breakwater, and what role does turbulent dissipation play?
 
-Assume access to a public directional wave dataset and a published
-benchmark converter model. Compare predictions using the directional
-wave distribution with predictions that represent each sea state by
-a single direction, keeping the other modelling assumptions consistent.
-The proposed contribution is guidance on when this simplification is
-adequate for preliminary energy-yield estimates. Resources are limited
-to a small numerical study using existing data.
+Use the paper's experimental and numerical investigation as the case
+material. Assess the importance of the design problem, the contribution
+relative to earlier work, the connection between geometry and physical
+mechanisms, and the limits of transferring findings across scales.
 
-Assess whether the question adds anything beyond established findings.
-Challenge the baseline, validation, and scope of inference. Identify
-the closest prior work that would need checking, propose the cheapest
-informative pilot if warranted, and specify when to expand, pivot, or stop.
-Do not assume the question is novel or worth pursuing.
+Explain what evidence distinguishes a useful physical explanation from
+simply ranking geometries. Identify the strongest objection, the decisive
+comparison, and the validation needed. For teaching purposes, outline
+the smallest test that could have informed a pursue, redesign, or stop
+decision before the full study. Separate published findings from your
+interpretation, cite the sources checked, and flag any access limitations.
 ```
 
-This illustrative prompt does not establish that the proposed question is novel or valuable. A verdict depends on the evidence and research context.
+This is an illustrative reformulation of a published research topic, not a claim of a new research question or a disclosure of future research plans. Publication alone does not validate the assessment framework or establish future impact.
 
 ## Attribution and licence
 
