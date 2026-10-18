@@ -1,6 +1,6 @@
 # Research Question Assessment
 
-An AI assistant skill for critically assessing and comparing scientific research questions using a seven-criterion quantitative rubric (v2.0). Created by **[Dr Yusuf R. Almalki](https://yusufradad.com/)**.
+An AI assistant skill for critically assessing and comparing scientific research questions using a seven-criterion quantitative rubric (v2.2). Created by **[Dr Yusuf R. Almalki](https://yusufradad.com/)**.
 
 **This is an experimental, evidence-informed framework, not a scientifically validated predictor of research impact.** It supports reasoned decisions about what to investigate; it does not predict citations, funding, publication, or transformative outcomes.
 
@@ -14,7 +14,7 @@ Use it to assess a research question or compare candidate directions against exi
 
 | Criterion | Central question |
 | --- | --- |
-| Scientific bottleneck prevalence | What proportion of a defined, representative literature sample explicitly identifies the same unresolved bottleneck? |
+| Scientific bottleneck prevalence | Is a substantive unresolved obstacle established, and if so, what proportion of a defined, representative literature sample recognises it? |
 | Novelty and distinct contribution | What new knowledge or capability would go beyond the closest established predecessor? |
 | Generalisability and downstream use | Where would the result transfer, and which distinct applications have literature support? |
 | Scientific testability and rigour | Are hypotheses, decisive tests, independent validation, uncertainty, and strong comparisons addressed? |
@@ -26,7 +26,9 @@ Each criterion is scored **0–10**, for a **total of 70**. The framework recogn
 
 Totals map to provisional categories from **Very low potential** to **Exceptional potential**, with thresholds and scoring rules defined in [SKILL.md](SKILL.md). These bands are not empirically calibrated predictions. Critical weaknesses in novelty, rigour, or feasibility must remain visible even when the total is high.
 
-Missing evidence must not be replaced with invented scores. If a required score cannot be defended, the assistant reports **N/A/10** and **Total: Not defensible /70 — evidence incomplete** rather than fabricating a comparable total.
+Criterion 1 first checks whether a genuine bottleneck is established. A supported finding that none is established receives **0/10**. When one qualifies, the skill estimates recognition using a neutral literature sample, targeting 50 independent original studies where feasible and disclosing sample limitations. Zero recognition in a credible sample is also a valid zero score.
+
+Missing evidence must not be replaced with invented scores. **N/A/10** is reserved for genuinely unassessable evidence, not simply a zero result or an unmet sampling target. If any required score cannot be defended, the assistant reports **Total: Not defensible /70 — evidence incomplete** rather than fabricating a comparable total.
 
 ## Installation
 
@@ -58,7 +60,7 @@ Almalki, Y.R. and Karmpadakis, I. (2026). [Effects of OWC geometry on total ener
 ```text
 I am considering investigating how front and back wall geometries affect the hydrodynamic performance of caisson-integrated oscillating water columns (OWCs), particularly the role of turbulent energy dissipation.
 I plan to use physical experiments and CFD simulations to investigate the underlying mechanisms, performance differences, and scale effects.
-Use the `research-question-assessment` skill to critically evaluate this research question based on the existing scientific literature.
+Use the /research-question-assessment skill to critically evaluate this research question based on the existing scientific literature.
 ```
 
 This is an illustrative reformulation of a published research topic, not a claim of a new research question or a disclosure of future research plans. Publication alone does not validate the assessment framework or establish future impact.

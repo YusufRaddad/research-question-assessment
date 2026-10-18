@@ -3,7 +3,7 @@ name: research-question-assessment
 description: Critically assess and compare scientific research questions using seven evidence-informed criteria scored out of 10 (70 points total), with a concise criterion-by-criterion justification and an impact-potential category. Use for assessing novelty, scientific bottlenecks, generalisability, rigour, timing, durability, feasibility, or research portfolio priorities.
 ---
 
-# Research Question Assessment — Quantitative Rubric (v2.0)
+# Research Question Assessment — Quantitative Rubric (v2.2)
 
 ## Mission
 
@@ -16,7 +16,7 @@ Help researchers choose questions that could advance knowledge or capability, ra
 - First identify the **research question**, **anticipated contribution**, and **planned investigation**; these are not interchangeable. A technique (e.g., CFD), device, deliverable, or unstudied parameter is not itself a scientific question.
 - Evaluate the anticipated contribution **relative to the closest existing original work**, not merely the absence of an identical title.
 - Base scores on verified literature and other relevant evidence when available. Distinguish confirmed facts, the researcher's claims, reasonable inference, and unknowns. Literature-search absence is not proof of novelty.
-- Use a representative and explicitly scoped literature sample for Criterion 1. Count each publication once and do not construct a sample with search terms that presuppose the bottleneck.
+- **Always assess whether Criterion 1 describes a real scientific bottleneck before attempting a prevalence estimate.** A routine parameter study, geometry comparison, or application of established methods does not automatically qualify. When a targeted literature check supports the conclusion that no substantive bottleneck is identified, assign **S1 = 0**, not N/A. If one qualifies, apply the neutral literature prevalence protocol.
 - Assess the scientific logic rigorously: competing hypotheses, decisive tests, baselines, independent validation, uncertainty, counterexamples, and failure boundaries.
 - Do not automatically reward broad transferability or trendy topics over consequential, narrow, application-specific work.
 - Separate **scientific potential** (Criteria 1–6) from **execution feasibility** (Criterion 7) when interpreting the total. An ambitious question should not be dismissed solely because it is difficult.
@@ -27,15 +27,44 @@ Help researchers choose questions that could advance knowledge or capability, ra
 
 ### 1. Scientific bottleneck prevalence — S1 (0–10)
 
+**Measure recognition of a genuine unresolved obstacle to progress**, not merely an interesting factor, a knowledge gap, a publishable topic, or a subject's popularity. **Zero is a valid and informative result.** Use a two-stage assessment:
+
+#### Stage A — Bottleneck qualification (B)
+
+Decide whether the question aims to resolve a **specific, consequential obstacle** that currently prevents or materially limits explaining, measuring, predicting, calculating, validating, or deciding something important. Identify **what is blocked, for whom, and by what missing knowledge or capability**. Check the closest relevant primary research and a recent review when available.
+
+- **B = 1:** A specific unresolved obstacle is identified and supported by prior scientific evidence; resolving it could remove a material limitation. A newly emerging bottleneck may qualify even if few papers mention it.
+- **B = 0:** The question describes a routine effect, geometry or parameter comparison, incremental optimisation, new site or application, or a general request to 'understand more', **without evidence of an obstacle blocking scientific or engineering progress**. Assign **S1 = 0/10**, with a brief explanation. **Do not require a 30–50-paper prevalence count just to justify this zero.**
+
+Do not treat a missing exact-match paper, statements such as 'little studied', or generic calls for further research as evidence of a bottleneck. Likewise, **do not infer B = 0 solely from search failure or inaccessible literature**; the decision needs an interpretable question and an adequate targeted check of its nearest predecessors. If access is entirely inadequate to judge qualification, B is unknown rather than zero.
+
+#### Stage B — Prevalence among relevant papers (only when B = 1)
+
 \[
-S_1 = 10\,\frac{N_b}{N_r}
+S_1 = \begin{cases}
+0, & B=0,\\[2pt]
+10\,\dfrac{N_b}{N_r}, & B=1,\;N_r>0.
+\end{cases}
 \]
 
-- **N_b:** Number of publications in a representative literature sample explicitly identifying the **same substantive unresolved bottleneck** as a limitation or obstacle.
-- **N_r:** Total number of relevant publications examined; require N_r > 0.
-- Count a publication once, regardless of the number of mentions. Exclude statements that merely repeat a generic 'more research is needed' formula without identifying the bottleneck.
-- Use a defined topic boundary, search strategy, sample period, and eligibility rules. Report `N_b/N_r` in the insight when available.
-- This estimates **recognised bottleneck prevalence**, not intrinsic importance: new, neglected, or foundational problems may score low. Do **not** use raw publication counts as a proxy for importance.
+- **N_b:** Number of assessable, independent eligible publications explicitly identifying or demonstrating the **same substantive unresolved bottleneck** as a material obstacle.
+- **N_r:** All independent eligible publications assessable for that bottleneck, including those not recognising it (`N_r = N_b + N_no`).
+- **B:** Qualification indicator, either 0 or 1. Record **B = 0, S1 = 0** when no substantive bottleneck is established; `N_b/N_r` is then **not required** and must not be invented.
+- Count each independent investigation once, and code uncertain/inaccessible publications separately rather than treating them as negative evidence.
+- When **B = 1** and a sound sample yields **N_b = 0**, the prevalence score is also **0/10**; it is not N/A. Explain that recognition is absent in the assessed sample, not that the problem cannot matter.
+
+#### Default literature protocol (automatic; proportionate to the question)
+
+1. **Identify the candidate obstacle before searching.** State what progress it would block, then define a neutral parent research domain **without selecting only papers about the alleged bottleneck**. If the question does not imply a concrete obstacle, do not invent one to obtain a positive score.
+2. **Check qualification first.** Examine the closest original research and relevant reviews over the **past 10 years** (plus foundational work when applicable), using neutral queries. Inspect substantive passages where accessible. Decide **B = 0 or B = 1** based on whether a material unresolved bottleneck is actually established. A defensible **B = 0** ends Criterion 1 here with **S1 = 0**; it does not require further prevalence sampling.
+3. **If B = 1, sample broadly.** Target **50 independent original research papers** with a balanced mix of years, researchers, methods and applications. Use multiple neutral queries and scholarly sources where feasible. Record the scope, publication window, sources, and sampling limitations. Reviews primarily help locate original papers; if counted, disclose this and apply it consistently.
+4. **Code consistently.** For each eligible paper record **yes** (explicit bottleneck), **no** (relevant content examined and bottleneck not identified), or **uncertain** (not enough accessible content). Record source identifiers and supporting passages. **No** cannot be concluded from abstract silence alone. Count `N_r = yes + no`; keep uncertain papers outside the denominator and report their number when material.
+5. **Calculate and disclose.** For B = 1, use `S1 = 10 N_b/N_r`, including **zero** when `N_b = 0` in a credible sample. Provide `N_b/N_r` and confidence in the short insight; check sensitivity to reasonable scope changes when feasible. Do not fabricate counts or silently broaden/narrow a domain to manipulate the result.
+6. **Use confidence labels, not a minimum-score barrier.** **50+** assessable papers: standard sample-based estimate; **30–49**: provisional; **10–29**: exploratory; **fewer than 10**: very-low-confidence estimate **only if** the accessible eligible corpus is credibly close to complete. These numbers are pragmatic conventions, not calibrated statistical thresholds. **Do not use N/A merely because the target of 50 was not reached.**
+
+**Decision hierarchy:** (i) a supported **B = 0** always yields **0/10**; (ii) with **B = 1**, a credible numerator/denominator yields a numeric score, including **0/10**; (iii) use **N/A only when neither qualification nor an interpretable prevalence estimate can be established because evidence or access is genuinely inadequate**. **Lack of recognition is a measured zero only following an adequate check—not an inference from a failed search.** The score reflects recognised bottleneck prevalence, **not intrinsic scientific importance**.
+
+**Example:** “How do alternative front and back wall geometries affect OWC performance?” is primarily a geometry–performance investigation. If the closest literature does not show that the question resolves a specific obstacle preventing scientific or engineering progress, assign **B = 0; S1 = 0/10**. Merely adding CFD or turbulence analysis does not create a bottleneck. If the investigator instead identifies a documented inability to predict viscous-loss scaling that blocks reliable design, assess that *specific obstacle* and then measure its prevalence.
 
 ### 2. Novelty and distinct contribution — S2 (0–10)
 
@@ -163,14 +192,14 @@ For internal diagnosis, one may calculate scientific potential as `(S1 + ... + S
 
 - Do not invent `N_b`, `N_r`, predecessors, applications, evidence, or numerical scores to fill gaps.
 - If sufficient context supports a **tentative qualitative rubric score** (especially S2–S7), show the estimated score and identify the uncertainty in its insight.
-- If a required score cannot be defensibly assigned (notably S1 without a defined literature sample), write **N/A/10** with a concise explanation. In that case, the final line must be **Total: Not defensible /70 — evidence incomplete**; optionally give the subtotal from scored criteria, but **never fabricate a comparable 70-point total**.
+- **For S1, perform bottleneck qualification first.** If no substantive bottleneck is established after checking relevant prior work, report **0/10** and compute the normal total out of 70. Do **not** substitute N/A just because no bottleneck exists, recognition is zero in a credibly sampled corpus, or the 50-paper target is unmet. Use **N/A/10** only for genuinely unassessable evidence (e.g., inadequate literature access for qualification, or a known bottleneck with no interpretable prevalence sample). If any required score truly is unavailable, the final line must be **Total: Not defensible /70 — evidence incomplete**; optionally give a subtotal, but **never fabricate a 70-point total**.
 - Where evidence is limited but all scores can still be defended as provisional, show the total and classification, qualified as **provisional** in the final line.
 - Present scores to one decimal at most; calculate the total from unrounded values where possible, then round once.
 
 ## Research and assessment procedure (internal; do not print by default)
 
 1. Formulate the question precisely; distinguish question, contribution, and research plan.
-2. Identify the limiting scientific/engineering bottleneck and construct a representative evidence sample to measure S1.
+2. Evaluate whether a **substantive scientific/engineering bottleneck is established at all**. Check the nearest prior work and the default 10-year literature window (plus foundations). If **B = 0, S1 = 0** and continue; do not manufacture a bottleneck or demand 50 papers. If **B = 1**, define a neutral domain and estimate prevalence from assessable yes/no original studies (target 50 when feasible), with sample size, uncertain cases and confidence. If evidence genuinely cannot support either result, use N/A.
 3. Locate the closest predecessor(s), contradictory findings, rival explanations and strongest baselines; score S2.
 4. Identify credible transfer domains, assumptions, failure boundaries and non-overlapping downstream uses; score S3.
 5. Check discriminating predictions, validation, uncertainty, and rigorous comparisons; score S4.
@@ -185,7 +214,7 @@ The optional deeper analysis can investigate a cheap decisive test, a stop/pivot
 
 Display **exactly seven numbered criterion entries, in this order**. For each, put the **criterion name and its numeric score together in bold**, on one line. On the next line, provide **one concise insight, no more than 50 words**, grounded in evidence and highlighting the major strength, weakness, or uncertainty. Avoid tables, sub-scores, long prose, methodology digressions, separate verdict sections, and generic praise.
 
-Then show **one bold total score with the matching classification and a one-sentence interpretation**. Do not show the detailed calculations, unless requested. No additional material by default.
+Then show **one bold total score with the matching classification and a one-sentence interpretation**. Do not show detailed calculations or the full search protocol unless requested. For S1, if **B = 0**, explain briefly why the question does not remove a documented bottleneck; **a zero score needs no invented `N_b/N_r` count**. If **B = 1**, give the measured `N_b/N_r` and confidence where space permits. No additional material by default.
 
 **Output template (placeholders are NOT scores):**
 
